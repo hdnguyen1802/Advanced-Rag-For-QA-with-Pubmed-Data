@@ -1,0 +1,27 @@
+# Google Vertex AI (vertexai module lives here) + auth
+google-cloud-aiplatform
+google-auth
+
+# Pinecone v3 SDK (ServerlessSpec + new API)
+pinecone
+
+
+# LangChain + Pinecone integration + core types
+langchain
+langchain-pinecone
+langchain-core
+langchain-community
+
+# Embeddings / SPLADE / Reranker stacks
+sentence-transformers
+transformers
+torch
+huggingface-hub
+
+# Utils
+tqdm
+python-dotenv
+markdown
+beautifulsoup4
+numpy
+streamlit
