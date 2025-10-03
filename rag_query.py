@@ -20,17 +20,6 @@ import os
 import vertexai
 from google.oauth2 import service_account
 
-# Vertex AI credentials (local keyfile) + init
-creds = service_account.Credentials.from_service_account_file(
-    #YOUR JSON FILE PATH
-)
-vertexai.init(
-    project=os.getenv("PROJECT_ID"),
-    location=os.getenv("LOCATION"),
-    credentials=creds,
-    api_transport="grpc",
-)
-
 # Standard libs & utilities
 import os
 import time
@@ -58,7 +47,16 @@ warnings.filterwarnings("ignore")
 
 # Load env once
 load_dotenv(override=True)
-
+# Vertex AI credentials (local keyfile) + init
+creds = service_account.Credentials.from_service_account_file(
+    #YOUR JSON FILE PATH
+)
+vertexai.init(
+    project=os.getenv("PROJECT_ID"),
+    location=os.getenv("LOCATION"),
+    credentials=creds,
+    api_transport="grpc",
+)
 
 # -----------------------------------------------------------------------------
 # ## 2) Pinecone: create/connect dense & sparse indexes + encoders
@@ -489,4 +487,5 @@ def main():
                                          temperature = temperature, w_dense = w_dense, w_sparse = w_sparse)
     print(answer)
 if __name__ == "__main__":
+
     main()
