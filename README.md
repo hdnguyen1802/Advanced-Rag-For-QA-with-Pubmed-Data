@@ -1,6 +1,7 @@
 ## PubMed RAG — Vitamin D Specialized
 
 A retrieval-augmented generation (RAG) pipeline tailored to PubMed literature about Vitamin D. It builds a hybrid retriever over Pinecone using both dense embeddings and SPLADE sparse representations, fuses results via RRF, reranks with MedCPT, and generates a concise, citation-constrained answer with Vertex AI Gemini. A Streamlit UI is provided for interactive exploration.
+<img width="1842" height="1054" alt="Screenshot 2025-10-04 003545" src="https://github.com/user-attachments/assets/6df11f42-b646-4896-b60a-f41a02230d40" />
 
 ### Key Features
 - **Hybrid retrieval**: Dense (`NeuML/pubmedbert-base-embeddings`) + Sparse (SPLADE `NeuML/pubmedbert-base-splade`).
@@ -123,6 +124,7 @@ print(answer_text)
 ## Performance & Cost Notes
 - Ingestion can be network and CPU heavy; consider narrower date ranges or smaller batches.
 - Gemini and Pinecone operations incur costs; monitor usage in respective dashboards.
+
 
 
 
